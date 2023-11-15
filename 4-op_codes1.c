@@ -30,7 +30,7 @@ void pop(stack_t **stack, unsigned int line_num)
 void nop(stack_t **stack, unsigned int line_num)
 {
 	(void)stack;
-    (void)line_num;
+	(void)line_num;
 }
 
 /**
