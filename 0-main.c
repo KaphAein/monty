@@ -13,7 +13,7 @@ int main(int ac, char *av[])
 {
 	stack_t *stack = NULL;
 	static char *string[MAX_LINES] = {NULL};
-	int n = 0;
+	int n = 0, i;
 	FILE *fd;
 	size_t bufsize = 1000;
 
@@ -30,12 +30,20 @@ int main(int ac, char *av[])
 	}
 
 
-	while (n < MAX_LINES && fgets(string[n], bufsize, fd) != NULL)
+	for (n = 0; n < MAX_LINES && fgets(string[n], bufsize, fd) != NULL; n++)
 	{
-		n++;
+		string[n] = malloc(bufsize);
+		if (string[n] == NULL)
+		{
+			fprintf(stderr, "Error: Memory allocation failed\n");
+			exit(EXIT_FAILURE);
+		}
 	}
 	execute(string, stack);
-	free_list(string);
+	for (i = 0; i < n; i++)
+	{
+		free(string[i]);
+	}
 	fclose(fd);
 	return (0);
 }
