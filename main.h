@@ -55,7 +55,6 @@ int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 
 /* OP Codes */
 void push(stack_t **stack, unsigned int line_num, int n);
-void push_wrapper(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_num);
 void pint(stack_t **stack, unsigned int line_num);
 void swap(stack_t **stack, unsigned int line_num);

@@ -23,17 +23,6 @@ void push(stack_t **stack, unsigned int line_num, int n)
 }
 
 /**
- * push_wrapper - new element on stack
- * @stack: List head
- * @line_number: line number
- * Return: nothing
- */
-void push_wrapper(stack_t **stack, unsigned int line_number)
-{
-	push(stack, line_number, 0);
-}
-
-/**
  * pall - prints all stack
  * @stack: List head
  * @line_num: line number
